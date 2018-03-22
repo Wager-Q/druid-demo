@@ -1,0 +1,118 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.weimob</groupId>
+  <artifactId>druid-demo</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>druid-demo Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <repositories>
+    <!--包含需要连接到远程仓库的信息-->
+    <repository>
+      <!--远程仓库唯一标识符。可以用来匹配在settings.xml文件里配置的远程仓库-->
+      <id>alimaven</id>
+      <!--远程仓库名称-->
+      <name>aliyun maven</name>
+      <!--远程仓库URL，按protocol://hostname/path形式-->
+      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+    </repository>
+  </repositories>
+    <properties>
+      <java.version>1.8</java.version>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+      <org.springframework-version>3.1.1.RELEASE</org.springframework-version>
+      <!-- log4j -->
+      <log4j.version>1.2.17</log4j.version>
+      <org.aspectj-version>1.6.10</org.aspectj-version>
+      <org.slf4j-version>1.6.6</org.slf4j-version>
+      <mysql.version>5.1.34</mysql.version>
+    </properties>
+    <dependencies>
+      <!-- Spring -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${org.springframework-version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${org.springframework-version}</version>
+      </dependency>
+
+      <!-- Logging -->
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${org.slf4j-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>jcl-over-slf4j</artifactId>
+        <version>${org.slf4j-version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>${org.slf4j-version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>${log4j.version}</version>
+      </dependency>
+      <!-- Servlet -->
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>2.5</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet.jsp</groupId>
+        <artifactId>jsp-api</artifactId>
+        <version>2.1</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+      </dependency>
+
+      <!-- Test -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>${org.springframework-version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.7</version>
+        <scope>test</scope>
+      </dependency>
+
+      <!-- druid -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid</artifactId>
+        <version>1.0.26</version>
+      </dependency>
+
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+    </dependencies>
+
+  <build>
+    <finalName>druid-demo</finalName>
+  </build>
+</project>
